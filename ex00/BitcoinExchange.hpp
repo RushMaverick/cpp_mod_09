@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 23:57:59 by rrask             #+#    #+#             */
-/*   Updated: 2024/02/18 14:29:50 by rrask            ###   ########.fr       */
+/*   Updated: 2024/02/18 21:25:08 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ class BitcoinExchange {
 		~BitcoinExchange();
 		void parseFile();
 		void processData(const std::string& inputFile);
-		bool checkHeader(const std::string& inputToCheck) const;
+		bool isLeapYear(int year);
+		int daysInMonth(int year, int month);
+		bool validDate(const std::string &dateStr);
 
 	class failedToOpen : public std::exception {
 		public:
