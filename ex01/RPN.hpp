@@ -1,9 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rrask <rrask@student.hive.fi>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/19 18:20:53 by rrask             #+#    #+#             */
+/*   Updated: 2024/02/19 18:20:57 by rrask            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef RPN_HPP
 #define RPN_HPP
 
-#include <stack>
 #include <iostream>
+#include <stack>
 #include <sstream>
+#include <cctype>
+#include <cstdlib>
+#include <cmath>
 
 class RPN {
 	private:
