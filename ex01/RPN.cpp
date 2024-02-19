@@ -4,7 +4,31 @@ RPN::RPN() {}
 
 RPN::~RPN() {}
 
-// 2 3 + 8 * 2 - 1
+int RPN::mathOperator(char ch, int val1, int val2){
+	int res;
+	switch(ch){
+		case '+': {
+			res = val1 + val2;
+			break;
+		}
+		case '-': {
+			// check the bigger one
+			res = val1 - val2;
+			break;
+		}
+		case '/': {
+			//check for zero
+			res = val1 / val2;
+			break;
+		}
+		case '*': {
+			res = val1 * val2;
+			break;
+		}
+	}
+	return res;
+}
+
 void RPN::evaluateAndCalculate(std::string &input){
 	std::istringstream iss(input);
 	char ch;
@@ -18,9 +42,9 @@ void RPN::evaluateAndCalculate(std::string &input){
 		if (ch == '+' || ch == '-' || ch == '*' || ch == '/'){
 			int val1 = _operandStack.top(); _operandStack.pop();
 			int val2 = _operandStack.top(); _operandStack.pop();
-			std::cout << val1 << std::endl;
-			std::cout << val2 << std::endl;
-			break;
+			int res = mathOperator(ch, val1, val2);
+			_operandStack.push(res);
+			std::cout << _operandStack.top() << std::endl;
 		}
 	}
 }
